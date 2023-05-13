@@ -1,8 +1,9 @@
 import React from "react"
+import styles from './page.module.scss'
 
 const CountryPediaHomePage = () => { 
   return (
-    <div>Welcome to countrypedia</div>
+    <div className={styles.main}>Welcome to countrypedia</div>
   )
 }
 
