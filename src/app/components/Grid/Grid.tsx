@@ -4,11 +4,7 @@ type GridProps = {
   readonly children: React.ReactNode
 }
 const Grid: React.FC<GridProps> = ({ children }) => {
-  return (
-    <div className={styles.gridContainer}>
-      <div className={styles.grid}>{children}</div>
-    </div>
-  )
+  return <div className={styles.grid}>{children}</div>
 }
 
 export default Grid

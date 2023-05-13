@@ -12,7 +12,7 @@ const ResultPanel = () => {
 
   const card = {
     id: 'br',
-    href: '#',
+    href: '/br',
     target: '',
     imageUrl: 'https://flagcdn.com/w320/br.png',
     data,

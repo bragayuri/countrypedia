@@ -12,6 +12,7 @@ const SearchBar = () => {
 
   return (
     <div className={styles.searchBar}>
+      <h1 className={styles.heading}>Countrypedia</h1>
       <SearchInput
         className={styles.searchInput}
         id="search-input"
