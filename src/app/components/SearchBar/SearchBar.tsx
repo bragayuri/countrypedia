@@ -3,10 +3,11 @@ import { useState } from 'react'
 import SearchInput from '../SearchInput/SearchInput'
 import styles from './SearchBar.module.scss'
 
-const SearchBar = () => {
-  const [searchValue, setSearchValue] = useState('')
-
-  const onPressEnter = (value: string) => {
+interface SearchBarProps {
+  setSearchValue: (value: string) => void
+}
+const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
+  const onSearch = (value: string) => {
     setSearchValue(value)
   }
 
@@ -16,7 +17,8 @@ const SearchBar = () => {
       <SearchInput
         className={styles.searchInput}
         id="search-input"
-        onPressEnter={onPressEnter}
+        onPressEnter={onSearch}
+        onChange={onSearch}
         label="Search"
       />
     </div>

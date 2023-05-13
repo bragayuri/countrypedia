@@ -33,7 +33,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   const [inputValue, setInputValue] = useState(value)
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event && event.key === 'Enter' && !onChange) {
+    if (event && event.key === 'Enter') {
       const value = (event.target as HTMLInputElement).value
 
       if (onPressEnter) {
