@@ -24,6 +24,7 @@ const LinkCard: React.FC<LinkCard> = ({
   data,
 }) => {
   const { heading = '', subHeading = '', paragraph = '' } = data
+
   return (
     <div className={styles.linkCard}>
       <Link id={id} href={href} target={target}>

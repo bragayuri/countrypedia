@@ -4,7 +4,7 @@ import ResultPanel from './components/ResultPanel/ResultPanel'
 import SearchBar from './components/SearchBar/SearchBar'
 import styles from './page.module.scss'
 
-const HomePage = () => {
+const HomePage = async () => {
   return (
     <Container>
       <div className={styles.homePage}>
