@@ -17,9 +17,6 @@ type LinkCard = {
 }
 
 const LinkCard: React.FC<LinkCard> = ({
-  id,
-  href = '#',
-  target,
   imageUrl = 'https://flagcdn.com/w320/br.png',
   data,
 }) => {
@@ -27,7 +24,7 @@ const LinkCard: React.FC<LinkCard> = ({
 
   return (
     <div className={styles.linkCard}>
-      <Link id={id} href={href} target={target}>
+      <div>
         <img
           className={styles.image}
           id="link-card-image"
@@ -39,7 +36,7 @@ const LinkCard: React.FC<LinkCard> = ({
           <h6 className={styles.subHeading}>{subHeading}</h6>
           <p className={styles.paragraph}>{paragraph}</p>
         </div>
-      </Link>
+      </div>
     </div>
   )
 }
