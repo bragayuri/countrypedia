@@ -7,6 +7,7 @@ import styles from './page.module.scss'
 
 const HomePage = async () => {
   const countries: Country[] = await getAllCountries()
+
   return (
     <Container>
       <div className={styles.homePage}>

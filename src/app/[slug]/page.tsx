@@ -8,6 +8,12 @@ import CountryDetailsTable from '../components/CountryDetailsTable/CountryDetail
 import { getCountryBySlug } from '../api/getCountryBySlug'
 import { Country } from '@/types/Country'
 import { getCountryBorders } from '../api/getCountryBorders'
+import { Metadata } from 'next'
+
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
 type CountryDetailsProps = {
   readonly slug: string
@@ -78,3 +84,13 @@ const CountryDetailsPage = async ({
 }
 
 export default CountryDetailsPage
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const id = params.slug
+
+  const country: Country = await getCountryBySlug(id)
+
+  return {
+    title: `Visit ${country.name.common} one day!`,
+  }
+}
