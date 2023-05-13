@@ -1,4 +1,3 @@
-'use client'
 import Card, { CardData } from '../Card/Card'
 import Grid from '../Grid/Grid'
 import styles from './ResultPanel.module.scss'

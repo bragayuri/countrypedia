@@ -1,7 +1,9 @@
 @import 'src/variables';
 
+
 .linkCard {
-    background-color: white;
+   @include country-card-layout;
+    background-color: $white;
     height: 400px;
     min-width: 300px;
     border-radius: 16px;

@@ -1,0 +1,25 @@
+@import 'src/variables';
+
+
+.skeletonItem {
+  @include country-card-layout;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+ 
+}
+
+@keyframes skeletonAnimation {
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}
+
+.skeletonItem.animation {
+  animation: skeletonAnimation 1s ease-in-out infinite;
+}
