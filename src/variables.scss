@@ -1,0 +1,50 @@
+// colors
+
+$black: #000;
+$white: #fff;
+
+$gray50: #f6f6f6;
+$gray100: #eee;
+$gray150: #eeeeee;
+$gray200: #e2e2e2;
+$gray300: #cbcbcb;
+$gray400: #afafaf;
+$gray500: #757575;
+$gray600: #545454;
+$gray700: #333;
+$gray750: #1f1f1f;
+
+$navy: #1a2634;
+$navy200: #767d85;
+$navy300: #48515d;
+$navy500: #151e2a;
+$navy600: #10171f;
+$navy750: #05080a;
+
+$blue50: #cce1ff;
+$blue100: #99c3ff;
+$blue200: #66a4ff;
+$blue300: #3386ff;
+$blue: #0068ff;
+$blue500: #0053cc;
+$blue600: #003e99;
+
+// media queries
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
