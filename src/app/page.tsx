@@ -3,7 +3,9 @@ import styles from './page.module.scss'
 
 const CountryPediaHomePage = () => { 
   return (
-    <div className={styles.main}>Welcome to countrypedia</div>
+    <div className={styles.main}>
+      <h1>Welcome to countrypedia</h1>
+    </div>
   )
 }
 
