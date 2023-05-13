@@ -1,0 +1,38 @@
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.errorButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 2rem auto;
+}
+
+.errorMessage {
+    margin-top: 2rem;
+}
+
+.errorButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
