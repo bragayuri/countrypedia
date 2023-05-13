@@ -1,8 +1,11 @@
 import { Country } from '@/types/Country'
 
-export const getAllCountries = async (): Promise<Country[]> => {
+export const getCountryBorders = async (country: Country) => {
+  const codes = country.borders.join(',')
   try {
-    const response = await fetch('https://restcountries.com/v3.1/all')
+    const response = await fetch(
+      `https://restcountries.com/v3.1/alpha?codes=${codes}`,
+    )
     const data = await response.json()
 
     if (!response.ok) {
@@ -13,6 +16,6 @@ export const getAllCountries = async (): Promise<Country[]> => {
     return data
   } catch (error) {
     console.error('There was an error!', error)
-    return []
+    return Promise.reject(error)
   }
 }

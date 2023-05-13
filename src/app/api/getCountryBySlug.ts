@@ -1,8 +1,8 @@
 import { Country } from '@/types/Country'
 
-export const getAllCountries = async (): Promise<Country[]> => {
+export const getCountryBySlug = async (slug: string): Promise<Country> => {
   try {
-    const response = await fetch('https://restcountries.com/v3.1/all')
+    const response = await fetch(`https://restcountries.com/v3.1/alpha/${slug}`)
     const data = await response.json()
 
     if (!response.ok) {
@@ -10,9 +10,9 @@ export const getAllCountries = async (): Promise<Country[]> => {
       throw new Error(error)
     }
 
-    return data
+    return data[0]
   } catch (error) {
     console.error('There was an error!', error)
-    return []
+    return Promise.reject(error)
   }
 }

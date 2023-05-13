@@ -1,14 +1,14 @@
 'use client'
+import { Country } from '@/types/Country'
+import Link from 'next/link'
 
-import { CountriesDataContext } from '@/app/countries-provider'
-import { useContext } from 'react'
 import Card, { CardData } from '../Card/Card'
 import Grid from '../Grid/Grid'
 import styles from './ResultPanel.module.scss'
 
-const ResultPanel = () => {
-  const countries = useContext(CountriesDataContext)
+const ResultPanel = ({ countries }: { countries: Country[] }) => {
   const cardList = countries.map((country) => {
+    const { cca3: id } = country
     const data: CardData = {
       heading: country.name.common,
       subHeading: country.name.official,
@@ -16,7 +16,7 @@ const ResultPanel = () => {
     }
 
     const card = {
-      id: country.cca3,
+      id,
       href: `/${country.cca3.toLowerCase()}`,
       target: '',
       imageUrl: country.flags.svg,
@@ -24,14 +24,9 @@ const ResultPanel = () => {
     }
 
     return (
-      <Card
-        key={card.id}
-        id={card.id}
-        href={card.href}
-        target={card.target}
-        imageUrl={card.imageUrl}
-        data={data}
-      />
+      <Link key={id} id={id} href={`/${id}`}>
+        <Card imageUrl={card.imageUrl} data={data} />
+      </Link>
     )
   })
 
