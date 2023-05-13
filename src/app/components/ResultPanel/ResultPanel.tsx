@@ -3,34 +3,42 @@ import Card, { CardData } from '../Card/Card'
 import Grid from '../Grid/Grid'
 import styles from './ResultPanel.module.scss'
 
-const ResultPanel = () => {
-  const data: CardData = {
-    heading: 'Brazil',
-    subHeading: 'Federative Republic of Brazil',
-    paragraph: 'Population: 23.5490',
-  }
+type CountriesData = {
+  countries: Country[]
+}
 
-  const card = {
-    id: 'br',
-    href: '/br',
-    target: '',
-    imageUrl: 'https://flagcdn.com/w320/br.png',
-    data,
-  }
+const ResultPanel: React.FC<CountriesData> = ({ countries }) => {
+  const cardList = countries.map((country) => {
+    const data: CardData = {
+      heading: country.name.common,
+      subHeading: country.name.official,
+      paragraph: `Population: ${country.population}`,
+    }
 
-  const cardList = Array.from({ length: 30 }, (_, index) => (
-    <Card
-      key={index}
-      id={card.id}
-      href={card.href}
-      target={card.target}
-      imageUrl={card.imageUrl}
-      data={card.data}
-    />
-  ))
+    const card = {
+      id: country.cca3,
+      href: `/${country.cca3}`,
+      target: '',
+      imageUrl: country.flags.svg,
+      data,
+    }
+
+    return (
+      <Card
+        key={card.id}
+        id={card.id}
+        href={card.href}
+        target={card.target}
+        imageUrl={card.imageUrl}
+        data={data}
+      />
+    )
+  })
 
   return (
-    <div className={styles.resultPanel}>{data && <Grid>{cardList}</Grid>}</div>
+    <div className={styles.resultPanel}>
+      {countries && <Grid>{cardList}</Grid>}
+    </div>
   )
 }
 
