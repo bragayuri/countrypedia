@@ -1,0 +1,10 @@
+@import 'src/variables.scss';
+
+.resultPanel {
+    width: 100%;
+    
+
+    @include mobile {
+    padding-top: 2rem;    
+    }
+}
