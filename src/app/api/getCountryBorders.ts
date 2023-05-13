@@ -1,6 +1,10 @@
 import { Country } from '@/types/Country'
 
 export const getCountryBorders = async (country: Country) => {
+  
+  if (!country.hasOwnProperty('borders')) {
+    return []
+  }
   const codes = country.borders.join(',')
   try {
     const response = await fetch(

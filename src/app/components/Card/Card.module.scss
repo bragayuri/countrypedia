@@ -6,6 +6,7 @@
     background-color: $white;
     height: 400px;
     min-width: 300px;
+    max-width: 300px;
     border-radius: 16px;
     padding: 0;
     display: flex;
@@ -23,7 +24,8 @@
 }
 
 .image {
-    width: 325px;
+    width: 100%;
+    min-width: 298px;
     height: 15rem;
     object-fit: cover;
     border-radius: 16px 16px 0 0;
