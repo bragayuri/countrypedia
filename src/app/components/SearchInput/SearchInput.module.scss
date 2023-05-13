@@ -1,0 +1,72 @@
+@import "src/variables";
+
+.searchInput {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  justify-content: start;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  padding-left: 14px;
+  background-color: $white;
+  border: 1px solid transparent;
+
+  @include tablet {
+    background-color: $gray50;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $gray750;
+    padding: 8.5px 0;
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    border: 1px solid $blue;
+    background-color: $white;
+  }
+
+  &:focus-within {
+    border: 1px solid $blue;
+  }
+
+  label {
+    position: absolute;
+    left: 52px;
+    font-weight: 600;
+    padding: 0;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+    color: $gray500;
+    white-space: nowrap;
+
+    &[data-floating='true'] {
+      opacity: 0;
+    }
+
+    &.withStartItem {
+      left: 60px;
+    }
+  }
+
+  &:focus-within > label {
+    opacity: 0;
+  }
+}
+
+.searchIcon {
+  color: $gray700;
+  margin-inline-start: 0.5rem;
+}
+
+.divider {
+  width: 1px;
+  height: 8px;
+  background-color: $gray300;
+  margin: 0 12px;
+}

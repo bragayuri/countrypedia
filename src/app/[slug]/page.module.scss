@@ -1,0 +1,80 @@
+@import 'src/variables';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  
+  @media screen and (min-width: 1200px) { 
+    height: 100vh;
+  }
+}
+
+.countryDetails {
+  flex: 1;
+  display: flex;
+  background-color: whitesmoke;
+ 
+}
+
+.pageHeading {
+ padding: 1rem;
+ background-color: whitesmoke;
+
+}
+
+.goBackLink {
+  background-color: whitesmoke;
+  padding: 0 1rem;
+}
+
+.countryInfoPanel {
+  width: 25rem;
+  border: 1px solid $gray200;
+  box-shadow: 0px 0px 20px 2px rgba(226, 226, 226, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 16px;
+  padding: 1rem;
+  overflow: auto;
+
+}
+
+.borderCountries {
+  flex: 1;
+  background-color: #f2f2f2;
+  overflow-y: auto;
+  
+}
+
+.borderCountriesHeading {
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-bottom: 1px solid $gray200;
+}
+
+.countryHeading {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.countrySubHeading {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.countryDetailsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.countryDetailsTable th,
+.countryDetailsTable td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.countryDetailsTable th {
+  text-align: left;
+  background-color: #f2f2f2;
+}

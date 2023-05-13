@@ -1,12 +1,18 @@
 import React from 'react'
+import Container from './components/Container/Container'
+import ResultPanel from './components/ResultPanel/ResultPanel'
+import SearchBar from './components/SearchBar/SearchBar'
 import styles from './page.module.scss'
 
-const CountryPediaHomePage = () => {
+const HomePage = () => {
   return (
-    <div className={styles.main}>
-      <h1>Welcome to countrypedia</h1>
-    </div>
+    <Container>
+      <div className={styles.homePage}>
+        <SearchBar />
+        <ResultPanel />
+      </div>
+    </Container>
   )
 }
 
-export default CountryPediaHomePage
+export default HomePage
