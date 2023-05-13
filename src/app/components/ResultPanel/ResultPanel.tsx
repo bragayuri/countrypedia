@@ -25,7 +25,11 @@ const ResultPanel = ({ countries }: { countries: Country[] }) => {
 
     return (
       <Link key={id} id={id} href={`/${id}`}>
-        <Card imageUrl={card.imageUrl} data={data} />
+        <Card
+          imageUrl={card.imageUrl}
+          data={data}
+          alt={`${country.name.common}`}
+        />
       </Link>
     )
   })
