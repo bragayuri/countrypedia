@@ -1,4 +1,4 @@
-type Country = {
+export type Country = {
   name: {
     common: string
     official: string
@@ -188,4 +188,9 @@ type Country = {
     format: string
     regex: string
   }
+}
+
+export type Currency = {
+  readonly name: string
+  readonly symbol: string
 }
