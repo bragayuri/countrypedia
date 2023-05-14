@@ -1,4 +1,5 @@
 import { Country } from '@/types/Country'
+import { Metadata } from 'next'
 import React from 'react'
 import { getAllCountries } from './api/getAllCountries'
 import Container from './components/Container/Container'
@@ -18,3 +19,11 @@ const HomePage = async () => {
 }
 
 export default HomePage
+
+export async function generateMetadata(): Promise<Metadata> {
+  const countries: Country[] = await getAllCountries()
+  return {
+    title: `Countrypedia - a list of ${countries.length} is available`,
+  }
+}
+

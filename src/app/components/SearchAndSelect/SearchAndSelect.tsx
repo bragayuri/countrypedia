@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import { Country } from '@/types/Country'
 import { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
+
 const ResultPanel = dynamic(() => import('../ResultPanel/ResultPanel'))
 
 const searchCountries = (countries: Country[], searchValue: string) => {
