@@ -1,3 +1,5 @@
+@import 'src/variables';
+
 .countryDetailsTable {
   width: 100%;
   border-collapse: collapse;
@@ -5,11 +7,15 @@
 
 .countryDetailsTable th,
 .countryDetailsTable td {
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border: 0.0625rem solid #ddd;
 }
 
 .countryDetailsTable th {
   text-align: left;
-  background-color: #f2f2f2;
+  background-color: $gray100;
+}
+
+.key {
+  text-transform: capitalize;
 }

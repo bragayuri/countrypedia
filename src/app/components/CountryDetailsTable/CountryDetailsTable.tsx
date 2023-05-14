@@ -48,8 +48,8 @@ const CountryDetailsTable: React.FC<CountryDetailsListProps> = ({
     <table className={styles.countryDetailsTable}>
       <tbody>
         {Object.entries(countryDetailsData).map(([key, value]) => (
-          <tr key={key}>
-            <th>{key}:</th>
+          <tr id={key} key={key}>
+            <th className={styles.key}>{key}:</th>
             <td>
               {Array.isArray(value) ? (
                 <ul>

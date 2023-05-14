@@ -1,3 +1,5 @@
+@import 'src/variables.scss';
+
 .errorContainer {
   display: flex;
   justify-content: center;
@@ -12,17 +14,16 @@
 
 .errorButton {
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: black;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  color: $black;
   background-color: transparent;
-  border: 1px solid black;
-  border-radius: 16px;
+  border: 0.0625rem solid $black;
+  border-radius: 1rem;
   text-decoration: none;
   cursor: pointer;
   margin: 2rem auto;
 }
-
 .errorMessage {
   margin-top: 2rem;
 }

@@ -80,6 +80,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       <input
         id={id}
         type="text"
+        aria-label="search input"
         onChange={handleChange}
         value={inputValue}
         onFocus={onFocus}

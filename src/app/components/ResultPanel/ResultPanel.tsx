@@ -33,6 +33,7 @@ const ResultPanel = ({ countries }: { countries: Country[] }) => {
         href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
       >
         <Card
+          id={id}
           imageUrl={card.imageUrl}
           data={data}
           alt={`${country.name.common}`}
