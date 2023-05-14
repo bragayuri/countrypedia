@@ -22,8 +22,8 @@ const Card: React.FC<CardProps> = ({ imageUrl = '', data, alt = '' }) => {
   const { heading = '', subHeading = '', paragraph = '' } = data
 
   return (
-    <div className={styles.linkCard}>
-      <div>
+    <div className={styles.card}>
+      <div className={styles.cardWrapper}>
         <Image
           className={styles.image}
           src={imageUrl}
