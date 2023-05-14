@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 interface CarouselProps {
-  cards: JSX.Element[]
+  cards: React.JSX.Element[]
 }
 
 const CarouselContainer = styled.div`
@@ -56,7 +56,6 @@ const CarouselContainer = styled.div`
 const FlippedButton = styled.svg`
   transform: scaleX(-1);
 `
-
 
 const Carousel: React.FC<CarouselProps> = ({ cards }) => {
   const carouselRef = useRef<HTMLDivElement>(null)
