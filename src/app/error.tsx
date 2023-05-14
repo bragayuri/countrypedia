@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Icon from './components/Icon/Icon'
 import styles from './page.module.scss'
 import errorIcon from 'src/assets/errorIcon.svg'

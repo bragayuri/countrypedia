@@ -51,7 +51,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
       onChange?.(inputValue)
     }, 1000)
     return () => clearTimeout(timer)
-  }, [inputValue])
+  }, [inputValue, onChange])
 
   useEffect(() => {
     if (searchValue) setInputValue(searchValue)

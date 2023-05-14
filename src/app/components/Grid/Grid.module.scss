@@ -1,18 +1,16 @@
-@import "src/variables.scss";
+@import 'src/variables.scss';
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-    width: 100%;
-    justify-content: flex-start;
-    gap:1rem;
-    overflow: auto;
-    padding-bottom: 1rem;
-    margin-top: 1rem;
-    
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  width: 100%;
+  justify-content: flex-start;
+  gap: 1rem;
+  overflow: auto;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
 
-    @media screen and (max-width: 28rem) {
-      grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-    }
-
+  @media screen and (max-width: 28rem) {
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  }
 }

@@ -3,8 +3,8 @@
 .layout {
   display: flex;
   flex-direction: column;
-  
-  @media screen and (min-width: 1200px) { 
+
+  @media screen and (min-width: 1200px) {
     height: 100vh;
   }
 }
@@ -13,13 +13,11 @@
   flex: 1;
   display: flex;
   background-color: whitesmoke;
- 
 }
 
 .pageHeading {
- padding: 1rem;
- background-color: whitesmoke;
-
+  padding: 1rem;
+  background-color: whitesmoke;
 }
 
 .goBackLink {
@@ -43,14 +41,12 @@
   border-radius: 16px;
   padding: 1rem;
   overflow: auto;
-
 }
 
 .borderCountries {
   flex: 1;
   background-color: #f2f2f2;
   overflow-y: auto;
-  
 }
 
 .borderCountriesHeading {
@@ -68,4 +64,3 @@
   font-size: 1rem;
   padding: 0.5rem;
 }
-

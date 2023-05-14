@@ -1,3 +1,4 @@
+import React from 'react'
 import { Currency, Country } from '@/types/Country'
 import styles from './CountryDetailsTable.module.scss'
 

@@ -6,7 +6,6 @@ import { useState } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 const ResultPanel = dynamic(() => import('../ResultPanel/ResultPanel'))
 
-
 const searchCountries = (countries: Country[], searchValue: string) => {
   const search = searchValue.toLowerCase()
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import { HTMLAttributeAnchorTarget } from 'react'
 import styles from './Card.module.scss'
@@ -8,7 +9,7 @@ export type CardData = {
   readonly paragraph: string
 }
 
-type Card = {
+type CardProps = {
   readonly id?: string
   readonly href?: string
   readonly target?: HTMLAttributeAnchorTarget
@@ -17,7 +18,7 @@ type Card = {
   readonly alt: string
 }
 
-const Card: React.FC<Card> = ({ imageUrl = '', data, alt = '' }) => {
+const Card: React.FC<CardProps> = ({ imageUrl = '', data, alt = '' }) => {
   const { heading = '', subHeading = '', paragraph = '' } = data
 
   return (
