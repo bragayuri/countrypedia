@@ -117,6 +117,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const country: Country = await getCountryBySlug(id)
 
   return {
-    title: `Visit ${country.name.common} one day!`,
+    title: `${
+      country.name.common
+    } - Population: ${country.population.toLocaleString()} Capital: ${
+      country.capital
+    }`,
   }
 }
