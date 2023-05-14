@@ -26,4 +26,3 @@ export async function generateMetadata(): Promise<Metadata> {
     title: `Countrypedia - a list of ${countries.length} is available`,
   }
 }
-

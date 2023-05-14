@@ -1,5 +1,5 @@
 'use client'
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import styles from './Modal.module.scss'
 
 interface ModalProps {

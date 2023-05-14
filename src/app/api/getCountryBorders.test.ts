@@ -1,4 +1,4 @@
-// Import necessary modules and types
+/* eslint-disable */
 import { getCountryBorders } from './getCountryBorders'
 import { expect } from '@jest/globals'
 import { Country } from '../../types/Country'

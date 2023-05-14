@@ -17,7 +17,6 @@ declare global {
   }
 }
 
-
 Cypress.Commands.add('visitWebsite', () => {
   cy.visit('/')
   cy.contains('Countrypedia').should('be.visible')
@@ -43,4 +42,3 @@ Cypress.Commands.add('clickCountryCard', (countryCode, expectedUrl) => {
 })
 
 export {}
-

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { getCountryBySlug } from './getCountryBySlug'
 import { expect } from '@jest/globals'
 import { Country } from '../../types/Country'
