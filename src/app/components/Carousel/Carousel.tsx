@@ -57,6 +57,7 @@ const FlippedButton = styled.svg`
   transform: scaleX(-1);
 `
 
+
 const Carousel: React.FC<CarouselProps> = ({ cards }) => {
   const carouselRef = useRef<HTMLDivElement>(null)
   const [scrollable, setScrollable] = useState(false)

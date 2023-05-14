@@ -25,13 +25,9 @@ const ResultPanel = ({ countries }: { countries: Country[] }) => {
       imageUrl: country.flags.svg,
       data,
     }
-
+    const route = ROUTES.COUNTRY_DETAILS.replace('slug', slug)
     return (
-      <Link
-        key={id}
-        id={id}
-        href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
-      >
+      <Link key={id} id={id} as={route} href={route}>
         <Card
           id={id}
           imageUrl={card.imageUrl}

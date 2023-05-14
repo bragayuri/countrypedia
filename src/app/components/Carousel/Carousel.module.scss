@@ -1,0 +1,31 @@
+.carouselContainer {
+  background-color: transparent;
+  position: relative;
+  min-height: 10em;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  min-width: 4rem;
+}
+
+.carouselContainer button {
+  border: none;
+  background: none;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.carouselContainer button:nth-child(2) {
+  transform: scaleX(-1);
+}
+
+.carouselContainer .listings {
+  grid-area: 1 / 2;
+  display: flex;
+  gap: 1em;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 0.5em;
+  overflow: auto;
+  padding: 1em;
+}

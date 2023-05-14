@@ -30,6 +30,8 @@ const Card: React.FC<CardProps> = ({ imageUrl = '', data, alt = '' }) => {
           width={0}
           height={0}
           alt={alt}
+          placeholder="blur"
+          blurDataURL={imageUrl}
         />
         <div className={styles.details}>
           <h5 className={styles.heading}>{heading}</h5>

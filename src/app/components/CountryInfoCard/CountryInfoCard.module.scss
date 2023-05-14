@@ -1,0 +1,67 @@
+@import 'src/variables';
+
+.countryInfoPanel {
+  width: 20rem;
+  border: 1px solid $gray200;
+  box-shadow: 0px 0px 20px 2px rgba(226, 226, 226, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.flag {
+  min-width: 17.875rem;
+  margin: auto;
+  object-fit: cover;
+}
+
+
+.countryHeading {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.countrySubHeading {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  padding: 2rem;
+}
+
+.gridItem {
+  background-color: $gray100;
+  padding: 0.625rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 48rem) {
+  .gridContainer {
+    grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+    gap: 0.625rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .gridContainer {
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    gap: 0.3125rem;
+  }
+}
