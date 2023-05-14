@@ -58,10 +58,11 @@ const CountryInfoCard: React.FC<CountryInfoCardProps> = ({ country }) => {
         <span></span>
         <CountryDetailsTable country={country} />
       </div>
-
-      <Modal open={showModal} onClose={toggleModal}>
-        <div className={styles.gridContainer}>{createGridItems()}</div>
-      </Modal>
+      {showModal && (
+        <Modal open={showModal} onClose={toggleModal}>
+          <div className={styles.gridContainer}>{createGridItems()}</div>
+        </Modal>
+      )}
     </div>
   )
 }

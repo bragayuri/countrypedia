@@ -21,11 +21,17 @@
 
 .image {
   width: 100%;
-  min-width: 18.625rem;
+  min-width: 100%;
+  min-width: 18.75rem;
   height: 15rem;
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
   border-bottom: 0.0625rem solid $gray300;
+   
+  @include mobile {
+    min-width: 20.625rem;
+  }
+ 
 }
 
 .details {
