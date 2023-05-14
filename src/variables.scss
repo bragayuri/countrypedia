@@ -2,32 +2,21 @@
 
 $black: #000;
 $white: #fff;
+$whitesmoke:#f5f5f5;
 
+$gray10: #f0f0f0;
+$gray20: #e0e0e0;
 $gray50: #f6f6f6;
 $gray100: #eee;
-$gray150: #eeeeee;
 $gray200: #e2e2e2;
 $gray300: #cbcbcb;
-$gray400: #afafaf;
 $gray500: #757575;
-$gray600: #545454;
 $gray700: #333;
 $gray750: #1f1f1f;
 
-$navy: #1a2634;
-$navy200: #767d85;
-$navy300: #48515d;
-$navy500: #151e2a;
-$navy600: #10171f;
-$navy750: #05080a;
-
-$blue50: #cce1ff;
-$blue100: #99c3ff;
-$blue200: #66a4ff;
-$blue300: #3386ff;
 $blue: #0068ff;
-$blue500: #0053cc;
-$blue600: #003e99;
+
+
 
 // media queries
 
@@ -43,16 +32,15 @@ $blue600: #003e99;
   }
 }
 
-@mixin desktop {
-  @media (min-width: 1024px) {
-    @content;
-  }
-}
 
 @mixin country-card-layout {
-  height: 400px;
-  min-width: 300px;
-  border-radius: 16px;
-  box-shadow: 0px 0px 20px 2px rgba(226, 226, 226, 0.5);
-  border: 1px solid $gray200;
+  height: 25rem;
+  min-width: 18.75rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 1.25rem 0.125rem rgba(226, 226, 226, 0.5);
+  border: 0.0625rem solid $gray200;
+
+  @include mobile {
+    min-width: 20.625rem;
+  }
 }
