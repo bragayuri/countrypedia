@@ -1,17 +1,17 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import styles from './CountryInfoCard.module.scss'
+import styles from './CountryInfoManager.module.scss'
 import CountryDetailsTable from '../CountryDetailsTable/CountryDetailsTable'
 import { Country } from '@/types/Country'
 import { CardData } from '../Card/Card'
 import Modal from '../Modal/Modal'
 
-interface CountryInfoCardProps {
+interface CountryInfoManagerProps {
   country: Country
 }
 
-const CountryInfoCard: React.FC<CountryInfoCardProps> = ({ country }) => {
+const CountryInfoManager: React.FC<CountryInfoManagerProps> = ({ country }) => {
   const [showModal, setShowModal] = useState(false)
 
   const data: CardData = {
@@ -32,9 +32,21 @@ const CountryInfoCard: React.FC<CountryInfoCardProps> = ({ country }) => {
   const createGridItems = () => {
     return Object.entries(country).map(([key, value]) => {
       if (typeof value === 'string') {
+        const options: Record<string, string> = {
+          cca2: 'Code 1',
+          ccn3: 'Code 2',
+          cca3: 'Code 3',
+          cioc: 'Country IOC',
+          status: 'Status',
+          region: 'Region',
+          subregion: 'Subregion',
+          flag: 'Flag',
+          fifa: 'FIFA coda',
+          startOfWeek: '1st week day',
+        }
         return (
           <div key={key} className={styles.gridItem}>
-            <h4>{key}</h4>
+            <h4>{options[key]}</h4>
             <p>{value}</p>
           </div>
         )
@@ -45,7 +57,7 @@ const CountryInfoCard: React.FC<CountryInfoCardProps> = ({ country }) => {
 
   return (
     <div className={styles.countryInfoPanel}>
-      <div onClick={toggleModal}>
+      <div className={styles.imageWrapper} onClick={toggleModal}>
         <Image
           className={styles.flag}
           src={card.imageUrl}
@@ -67,4 +79,4 @@ const CountryInfoCard: React.FC<CountryInfoCardProps> = ({ country }) => {
   )
 }
 
-export default CountryInfoCard
+export default CountryInfoManager
