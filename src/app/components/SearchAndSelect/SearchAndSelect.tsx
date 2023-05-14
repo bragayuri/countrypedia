@@ -1,9 +1,11 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { Country } from '@/types/Country'
 import { useState } from 'react'
-import ResultPanel from '../ResultPanel/ResultPanel'
 import SearchBar from '../SearchBar/SearchBar'
+const ResultPanel = dynamic(() => import('../ResultPanel/ResultPanel'))
+
 
 const searchCountries = (countries: Country[], searchValue: string) => {
   const search = searchValue.toLowerCase()

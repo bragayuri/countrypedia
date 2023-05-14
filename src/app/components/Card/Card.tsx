@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Image from 'next/image'
 import { HTMLAttributeAnchorTarget } from 'react'
 import styles from './Card.module.scss'
 
@@ -8,28 +8,27 @@ export type CardData = {
   readonly paragraph: string
 }
 
-type LinkCard = {
+type Card = {
   readonly id?: string
   readonly href?: string
   readonly target?: HTMLAttributeAnchorTarget
   readonly imageUrl?: string
   readonly data: CardData
+  readonly alt: string
 }
 
-const LinkCard: React.FC<LinkCard> = ({
-  imageUrl = 'https://flagcdn.com/w320/br.png',
-  data,
-}) => {
+const Card: React.FC<Card> = ({ imageUrl = '', data, alt = '' }) => {
   const { heading = '', subHeading = '', paragraph = '' } = data
 
   return (
     <div className={styles.linkCard}>
       <div>
-        <img
+        <Image
           className={styles.image}
-          id="link-card-image"
           src={imageUrl}
-          alt="link-card-image"
+          width={0}
+          height={0}
+          alt={alt}
         />
         <div className={styles.details}>
           <h5 className={styles.heading}>{heading}</h5>
@@ -41,4 +40,4 @@ const LinkCard: React.FC<LinkCard> = ({
   )
 }
 
-export default LinkCard
+export default Card

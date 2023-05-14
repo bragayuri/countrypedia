@@ -9,6 +9,11 @@ import { getCountryBySlug } from '../api/getCountryBySlug'
 import { Country } from '@/types/Country'
 import { getCountryBorders } from '../api/getCountryBorders'
 import { Metadata } from 'next'
+import Image from 'next/image'
+import Icon from '../components/Icon/Icon'
+import arrowLeftIcon from 'src/assets/svg/arrowLeftIcon.svg'
+import { slugify } from '@/utils/helpers'
+import { ROUTES } from '@/constants/routes'
 
 type Props = {
   params: { slug: string }
@@ -44,12 +49,27 @@ const CountryDetailsPage = async ({
     <Container>
       <div className={styles.layout}>
         <h1 className={styles.pageHeading}>Country Details Page</h1>
-        <Link className={styles.goBackLink} href="/">
-          Go back
+        <Link className={styles.goBackLink} href={ROUTES.HOME}>
+          <div className={styles.goBack}>
+            <Icon
+              height={30}
+              width={30}
+              id="go-back-icon"
+              svg={arrowLeftIcon}
+              alt="Go back icon"
+            />
+            <span>Go back</span>
+          </div>
         </Link>
         <div className={styles.countryDetails}>
           <div className={styles.countryInfoPanel}>
-            <img className={styles.flag} src={card.imageUrl} alt="flag" />
+            <Image
+              className={styles.flag}
+              src={card.imageUrl}
+              width={286}
+              height={143}
+              alt={`${country.name.common}-flag`}
+            />
             <h5 className={styles.countryHeading}>{data.heading}</h5>
             <h6 className={styles.countrySubHeading}>{data.subHeading}</h6>
             <CountryDetailsTable country={country} />
@@ -61,16 +81,22 @@ const CountryDetailsPage = async ({
             <Grid>
               {borderCountries.map((borderCountry: Country) => {
                 const { cca3: id } = borderCountry
+                const slug = slugify(id)
                 const borderData: CardData = {
                   heading: borderCountry.name.common,
                   subHeading: borderCountry.name.official,
                   paragraph: `Population: ${borderCountry.population.toLocaleString()}`,
                 }
                 return (
-                  <Link key={id} id={id} href={`/${id}`}>
+                  <Link
+                    key={id}
+                    id={id}
+                    href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
+                  >
                     <Card
                       imageUrl={borderCountry.flags.svg}
                       data={borderData}
+                      alt={`${borderCountry.name?.common}-flag`}
                     />
                   </Link>
                 )
