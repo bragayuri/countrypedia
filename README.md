@@ -6,11 +6,13 @@ Countrypedia is a web application that provides information about countries arou
 
 - Next.js: A React framework for server-side rendered and static websites.
 - React: A JavaScript library for building user interfaces.
+- Sass: A CSS preprocessor that enhances CSS making stylesheets more efficient and maintainable.
 - Styled Components: A CSS-in-JS library for styling React components.
 - TypeScript: A typed superset of JavaScript for improved development experience.
 - ESLint: A linter tool for code quality and error detection.
 - Prettier: An opinionated code formatter for consistent code style.
 - Cypress: A JavaScript-based end-to-end testing framework for validating application functionality from a user's perspective.
+- Jest: A popular JavaScript testing framework that provides a simple and efficient way to write tests for your code.
 
 ## Features
 
@@ -57,7 +59,8 @@ For JS bundle size optimization the app uses NextJs techniques such:
 - Dynamic importing using NextJS 'next/dynamic';
 - Server side fetching to all calls
 
-- To implement dynamic SEO generateMetadata was used to provide personalized tags on Country Details Page.
+
+- The function generateMetadata was used to provide personalized SEO tags on Country Details Page.
 
 # More to come!
 
