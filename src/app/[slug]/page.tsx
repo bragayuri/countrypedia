@@ -12,7 +12,7 @@ import arrowLeftIcon from 'src/assets/svg/arrowLeftIcon.svg'
 import { slugify } from '@/utils/helpers'
 import { ROUTES } from '@/constants/routes'
 import Carousel from '../components/Carousel/Carousel'
-import CountryInfoCard from '../components/CountryInfoCard/CountryInfoCard'
+import CountryInfoCard from '../components/CountryInfoCard/CountryInfoManager'
 
 type Props = {
   params: { slug: string }
