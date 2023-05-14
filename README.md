@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Countrypedia
+
+Countrypedia is a web application that provides information about countries around the world. It utilizes the REST COUNTRIES API available at https://restcountries.com/ to fetch data about countries, such as names, population, languages, currencies, and much more.
+
+# Countrypedia utilizes the following technologies:
+
+- Next.js: A React framework for server-side rendered and static websites.
+- React: A JavaScript library for building user interfaces.
+- Styled Components: A CSS-in-JS library for styling React components.
+- TypeScript: A typed superset of JavaScript for improved development experience.
+- ESLint: A linter tool for code quality and error detection.
+- Prettier: An opinionated code formatter for consistent code style.
+- Cypress: A JavaScript-based end-to-end testing framework for validating application functionality from a user's perspective.
+
+## Features
+
+- Search for countries by name
+- Browse countries by region
+- View detailed information about a specific country, including:
+  - Official and common country names
+  - Capital city
+  - Population
+  - Area
+  - Languages spoken
+  - Currencies used
+  - Flag
+  - Bordering countries
+  - And many more!
 
 ## Getting Started
 
-First, run the development server:
+To get started with Countrypedia, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository to your local machine:
+- git clone https://github.com/bragayuri/countrypedia.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Change into the `countrypedia` directory:
+-cd countrypedia
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Install the necessary dependencies by running:
+- npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Start the development server:
+- npm run dev
 
-## Learn More
+5. Open your browser and navigate to http://localhost:3000 to view the app.
 
-To learn more about Next.js, take a look at the following resources:
+# Requirement considerations
+For JS bundle size optimization the app uses NextJs techniques such:
+- Server and Client Components, by defining which components should be rendered on Client or Server side by using the 'use client' directive;
+- Usage of NextJS Link components that utilizes 'prefetch'; 
+- Dynamic importing using NextJS 'next/dynamic';
+- Server side fetching to all calls
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- To implement dynamic SEO generateMetadata was used to provide personalized tags on Country Details Page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# More to come!
+- Storybook implementation allowing a complete design system
+- Implementation of Atomic Design principles 
+- Color themes
+- Integration with https://leafletjs.com/ maps api to plot the countries.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Countrypedia is released under the [MIT License](https://opensource.org/licenses/MIT).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Developed by Yuri Braga as a code challenge for Distilled Ireland https://www.distilled.ie/
