@@ -43,9 +43,15 @@ describe('Search and click and Go Back', () => {
 
   it('should search for "Ireland", find a matching card, click it, navigate to the country page, click the back button, and navigate to the home page', () => {
     cy.searchAndAssertCountry('IRL', 'Ireland', 'https://flagcdn.com/ie.svg')
-    cy.clickCountryCard('IRL', 'https://distilled-countrypedia.vercel.app/irl')
+    cy.clickCountryCard(
+      'IRL',
+      'https://countrypedia-bragayuri-destilled.vercel.app/irl',
+    )
     cy.get('a.page_goBackLink__piZpn').click()
-    cy.url().should('eq', 'https://distilled-countrypedia.vercel.app/')
+    cy.url().should(
+      'eq',
+      'https://countrypedia-bragayuri-destilled.vercel.app/',
+    )
   })
 })
 
@@ -60,7 +66,10 @@ describe('Border country presence test', () => {
       'United Kingdom',
       'https://flagcdn.com/gb.svg',
     )
-    cy.clickCountryCard('GBR', 'https://distilled-countrypedia.vercel.app/gbr')
+    cy.clickCountryCard(
+      'GBR',
+      'https://countrypedia-bragayuri-destilled.vercel.app/gbr',
+    )
   })
 })
 export {}

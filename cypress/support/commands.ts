@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-/// Define a custom command to visit the website
+
 declare global {
   namespace Cypress {
     interface Chainable<Subject> {

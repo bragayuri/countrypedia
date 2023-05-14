@@ -83,7 +83,7 @@ const CountryDetailsPage = async ({
           <div className={styles.borderCountriesPanel}>
             {!hasBorderCountries ? (
               <div className={styles.noBorderPlaceholder}>
-                <h3>This country has no borderinng countries</h3>
+                <h3>This country has no bordering countries</h3>
               </div>
             ) : (
               <Carousel cards={getCards()}></Carousel>
@@ -108,5 +108,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     } - Population: ${country.population.toLocaleString()} Capital: ${
       country.capital
     }`,
+    description: 'Welcome to Countrypedia',
   }
 }
