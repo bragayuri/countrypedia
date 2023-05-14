@@ -20,7 +20,7 @@ const HomePage = async () => {
 
 export default HomePage
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const countries: Country[] = await getAllCountries()
   return {
     title: `Countrypedia - a list of ${countries.length} is available`,

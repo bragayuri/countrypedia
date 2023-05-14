@@ -1,4 +1,5 @@
 import { Country } from '@/types/Country'
+import { notFound } from 'next/navigation'
 
 export const getAllCountries = async (): Promise<Country[]> => {
   try {
@@ -7,7 +8,8 @@ export const getAllCountries = async (): Promise<Country[]> => {
 
     if (!response.ok) {
       const error = data?.message || response.status
-      throw new Error(error)
+      console.log(error)
+      notFound()
     }
 
     return data

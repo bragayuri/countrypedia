@@ -1,4 +1,5 @@
 import { Country } from '@/types/Country'
+import { notFound } from 'next/navigation'
 
 export const getCountryBorders = async (country: Country) => {
   if (!Object.prototype.hasOwnProperty.call(country, 'borders')) {
@@ -13,7 +14,8 @@ export const getCountryBorders = async (country: Country) => {
 
     if (!response.ok) {
       const error = data?.message || response.status
-      throw new Error(error)
+      console.log(error)
+      notFound()
     }
 
     return data

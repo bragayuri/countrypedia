@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <g fill="#ccc" fill-rule="evenodd">
+    <path d="M200 24C100.28 24 24 100.28 24 200s76.28 176 176 176 176-76.28 176-176S299.72 24 200 24zm100 176h-50v50h-50v-50h-50v-50h50v-50h50v50h50v50z"/>
+  </g>
+</svg>
