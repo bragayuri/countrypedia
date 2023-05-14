@@ -1,7 +1,6 @@
 import React from 'react'
 import Container from '@/app/components/Container/Container'
 import Card, { CardData } from '../components/Card/Card'
-import Grid from '../components/Grid/Grid'
 import styles from './page.module.scss'
 import Link from 'next/link'
 import CountryDetailsTable from '../components/CountryDetailsTable/CountryDetailsTable'
@@ -14,6 +13,7 @@ import Icon from '../components/Icon/Icon'
 import arrowLeftIcon from 'src/assets/svg/arrowLeftIcon.svg'
 import { slugify } from '@/utils/helpers'
 import { ROUTES } from '@/constants/routes'
+import Carousel from '../components/Carousel/Carousel'
 
 type Props = {
   params: { slug: string }
@@ -44,6 +44,31 @@ const CountryDetailsPage = async ({
     target: '',
     imageUrl: country.flags.svg,
     data,
+  }
+
+  const getCards = () => {
+    return borderCountries.map((borderCountry: Country) => {
+      const { cca3: id } = borderCountry
+      const slug = slugify(id)
+      const borderData: CardData = {
+        heading: borderCountry.name.common,
+        subHeading: borderCountry.name.official,
+        paragraph: `Population: ${borderCountry.population.toLocaleString()}`,
+      }
+      return (
+        <Link
+          key={id}
+          id={id}
+          href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
+        >
+          <Card
+            imageUrl={borderCountry.flags.svg}
+            data={borderData}
+            alt={`${borderCountry.name?.common}-flag`}
+          />
+        </Link>
+      )
+    })
   }
 
   return (
@@ -85,30 +110,7 @@ const CountryDetailsPage = async ({
                 <h3>This country has no borderinng countries</h3>
               </div>
             ) : (
-              <Grid>
-                {borderCountries.map((borderCountry: Country) => {
-                  const { cca3: id } = borderCountry
-                  const slug = slugify(id)
-                  const borderData: CardData = {
-                    heading: borderCountry.name.common,
-                    subHeading: borderCountry.name.official,
-                    paragraph: `Population: ${borderCountry.population.toLocaleString()}`,
-                  }
-                  return (
-                    <Link
-                      key={id}
-                      id={id}
-                      href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
-                    >
-                      <Card
-                        imageUrl={borderCountry.flags.svg}
-                        data={borderData}
-                        alt={`${borderCountry.name?.common}-flag`}
-                      />
-                    </Link>
-                  )
-                })}
-              </Grid>
+              <Carousel cards={getCards()}></Carousel>
             )}
           </div>
         </div>
