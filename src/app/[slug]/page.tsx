@@ -12,6 +12,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Icon from '../components/Icon/Icon'
 import arrowLeftIcon from 'src/assets/svg/arrowLeftIcon.svg'
+import { slugify } from '@/utils/helpers'
+import { ROUTES } from '@/constants/routes'
 
 type Props = {
   params: { slug: string }
@@ -47,7 +49,7 @@ const CountryDetailsPage = async ({
     <Container>
       <div className={styles.layout}>
         <h1 className={styles.pageHeading}>Country Details Page</h1>
-        <Link className={styles.goBackLink} href="/">
+        <Link className={styles.goBackLink} href={ROUTES.HOME}>
           <div className={styles.goBack}>
             <Icon
               height={30}
@@ -79,13 +81,18 @@ const CountryDetailsPage = async ({
             <Grid>
               {borderCountries.map((borderCountry: Country) => {
                 const { cca3: id } = borderCountry
+                const slug = slugify(id)
                 const borderData: CardData = {
                   heading: borderCountry.name.common,
                   subHeading: borderCountry.name.official,
                   paragraph: `Population: ${borderCountry.population.toLocaleString()}`,
                 }
                 return (
-                  <Link key={id} id={id} href={`/${id}`}>
+                  <Link
+                    key={id}
+                    id={id}
+                    href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
+                  >
                     <Card
                       imageUrl={borderCountry.flags.svg}
                       data={borderData}

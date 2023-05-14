@@ -1,5 +1,7 @@
 'use client'
+import { ROUTES } from '@/constants/routes'
 import { Country } from '@/types/Country'
+import { slugify } from '@/utils/helpers'
 import Link from 'next/link'
 
 import Card, { CardData } from '../Card/Card'
@@ -9,6 +11,7 @@ import styles from './ResultPanel.module.scss'
 const ResultPanel = ({ countries }: { countries: Country[] }) => {
   const cardList = countries.map((country) => {
     const { cca3: id } = country
+    const slug = slugify(id)
     const data: CardData = {
       heading: country.name.common,
       subHeading: country.name.official,
@@ -24,7 +27,11 @@ const ResultPanel = ({ countries }: { countries: Country[] }) => {
     }
 
     return (
-      <Link key={id} id={id} href={`/${id}`}>
+      <Link
+        key={id}
+        id={id}
+        href={ROUTES.COUNTRY_DETAILS.replace('slug', slug)}
+      >
         <Card
           imageUrl={card.imageUrl}
           data={data}
