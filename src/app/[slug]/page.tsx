@@ -108,5 +108,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     } - Population: ${country.population.toLocaleString()} Capital: ${
       country.capital
     }`,
+    description: 'Welcome to Countrypedia',
   }
 }
