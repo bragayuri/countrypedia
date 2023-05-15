@@ -36,7 +36,7 @@ const CarouselContainer = styled.div`
     gap: 1em;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scroll-padding-inline: 0.5em;
+    scroll-padding-inline: 0.1em;
     overflow: auto;
     padding: 1em;
     scrollbar-width: none;
