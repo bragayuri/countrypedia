@@ -19,7 +19,7 @@
   padding: 1rem;
   background-color: $whitesmoke;
 
-   @include mobile {
+  @include mobile {
     font-size: 1.2rem;
     text-align: center;
   }
