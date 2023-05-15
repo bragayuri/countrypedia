@@ -41,7 +41,7 @@ const CountryInfoManager: React.FC<CountryInfoManagerProps> = ({ country }) => {
           region: 'Region',
           subregion: 'Subregion',
           flag: 'Flag',
-          fifa: 'FIFA coda',
+          fifa: 'FIFA code',
           startOfWeek: '1st week day',
         }
         return (

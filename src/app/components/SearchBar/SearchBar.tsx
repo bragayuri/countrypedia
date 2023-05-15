@@ -1,4 +1,5 @@
 'use client'
+import { constants } from '@/constants/translations'
 import React from 'react'
 import SearchInput from '../SearchInput/SearchInput'
 import styles from './SearchBar.module.scss'
@@ -13,13 +14,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSearchValue }) => {
 
   return (
     <div className={styles.searchBar}>
-      <h1 className={styles.heading}>Countrypedia</h1>
       <SearchInput
         className={styles.searchInput}
         id="search-input"
         onPressEnter={onSearch}
         onChange={onSearch}
-        label="Search"
+        label={constants.homePage.search}
       />
     </div>
   )
