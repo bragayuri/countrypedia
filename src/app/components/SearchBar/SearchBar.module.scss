@@ -1,7 +1,7 @@
 @import 'src/variables.scss';
 
 .searchBar {
-  padding: 5rem 0 2rem 0;
+  padding: 3rem 0 2rem 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,8 +20,3 @@
   border: 0.0625rem solid $gray200;
 }
 
-.heading {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-}

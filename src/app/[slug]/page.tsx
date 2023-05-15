@@ -13,6 +13,7 @@ import { slugify } from '@/utils/helpers'
 import { ROUTES } from '@/constants/routes'
 import Carousel from '../components/Carousel/Carousel'
 import CountryInfoCard from '../components/CountryInfoCard/CountryInfoManager'
+import { constants } from '@/constants/translations'
 
 type Props = {
   params: { slug: string }
@@ -61,7 +62,10 @@ const CountryDetailsPage = async ({
   return (
     <Container>
       <div className={styles.layout}>
-        <h1 className={styles.pageHeading}>Country Details Page</h1>
+        <h1 className={styles.pageHeading}>
+          {constants.detailsPage.heading} -{' '}
+          {country.name?.common ? country.name.common : ''}
+        </h1>
         <Link className={styles.goBackLink} href={ROUTES.HOME} as={ROUTES.HOME}>
           <div className={styles.goBack}>
             <Icon
@@ -71,19 +75,21 @@ const CountryDetailsPage = async ({
               svg={arrowLeftIcon}
               alt="Go back icon"
             />
-            <span>Go back</span>
+            <span>{constants.detailsPage.goBack}</span>
           </div>
         </Link>
         <div className={styles.countryDetails}>
           <CountryInfoCard country={country} />
         </div>
-        <h2 className={styles.borderCountriesHeading}>Bordering countries</h2>
+        <h2 className={styles.borderCountriesHeading}>
+          {constants.detailsPage.borderingCountry}
+        </h2>
 
         <div className={styles.borderCountries}>
           <div className={styles.borderCountriesPanel}>
             {!hasBorderCountries ? (
               <div className={styles.noBorderPlaceholder}>
-                <h3>This country has no bordering countries</h3>
+                <h3>{constants.detailsPage.noBorderingCountry}</h3>
               </div>
             ) : (
               <Carousel cards={getCards()}></Carousel>
@@ -101,13 +107,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.slug
 
   const country: Country = await getCountryBySlug(id)
+  const title = constants.detailsPage.meta.title
+    .replace('{countryName}', country.name.common)
+    .replace('{population}', country.population.toLocaleString())
+    .replace('{capital}', country.capital[0])
 
   return {
-    title: `${
-      country.name.common
-    } - Population: ${country.population.toLocaleString()} Capital: ${
-      country.capital
-    }`,
-    description: 'Welcome to Countrypedia',
+    title: title,
+    description: constants.detailsPage.meta.description,
   }
 }

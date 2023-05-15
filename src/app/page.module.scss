@@ -1,5 +1,15 @@
 @import 'src/variables.scss';
 
+.heading {
+  padding: 1rem;
+  
+
+  @include mobile {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
 .errorContainer {
   display: flex;
   justify-content: center;
